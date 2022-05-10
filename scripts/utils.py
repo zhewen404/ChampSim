@@ -10,9 +10,9 @@ reduction_map = {
 prune_map = {
     'num_core': lambda line: int(line.split('Number of CPUs: ')[-1]),
     'ipc': lambda line: float(line.split(' instructions')[0].split('IPC: ')[-1]),
-    'l1d_mr': lambda line: float(line.split('MISS:      ')[-1])/float(line.split('  HIT')[0].split('ACCESS:     ')[-1])*100,
-    'l2_mr': lambda line: float(line.split('MISS:      ')[-1])/float(line.split('  HIT')[0].split('ACCESS:     ')[-1])*100,
-    'llc_mr': lambda line: float(line.split('MISS:      ')[-1])/float(line.split('  HIT')[0].split('ACCESS:     ')[-1])*100,
+    'l1d_mr': lambda line: float(line.split('MISS:')[-1].replace(' ',''))/float(line.split('HIT')[0].split('ACCESS:')[-1].replace(' ',''))*100,
+    'l2_mr': lambda line: float(line.split('MISS:')[-1].replace(' ',''))/float(line.split('HIT')[0].split('ACCESS:')[-1].replace(' ',''))*100,
+    'llc_mr': lambda line: float(line.split('MISS:')[-1].replace(' ',''))/float(line.split('HIT')[0].split('ACCESS:')[-1].replace(' ',''))*100,
 }
 
 pattern_map = {

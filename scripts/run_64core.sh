@@ -1,5 +1,5 @@
 #!/bin/bash
-TRACE_DIR=~/repo/PARSEC-2.1
+TRACE_DIR=/mnt/ssd1/zwp/repo/PARSEC-2.1
 binary=${1}
 n_warm=${2}
 n_sim=${3}
